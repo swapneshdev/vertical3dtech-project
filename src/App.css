@@ -1,0 +1,216 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Inter Variable', sans-serif;
+
+    /* Base theme colors mapped to variables */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* Sidebar tokens */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Charts tokens */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    /* Radius tokens */
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+
+    /* Corporate Trust Colored Shadows */
+    --shadow-soft: 0 4px 20px -2px rgba(79, 70, 229, 0.1);
+    --shadow-soft-hover: 0 10px 25px -5px rgba(79, 70, 229, 0.15), 0 8px 10px -6px rgba(79, 70, 229, 0.1);
+    --shadow-button: 0 4px 14px 0 rgba(79, 70, 229, 0.3);
+    --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.5);
+}
+
+:root {
+    /* Corporate Trust Design System - Light Mode */
+    --background: #F8FAFC;         /* Slate 50 base */
+    --foreground: #0F172A;         /* Slate 900 Text Main */
+    --card: #FFFFFF;               /* Pure White surface */
+    --card-foreground: #0F172A;    /* Slate 900 */
+    --popover: #FFFFFF;            /* White */
+    --popover-foreground: #0F172A; /* Slate 900 */
+
+    /* Core Brand Dual-Tone Palette */
+    --primary: #4F46E5;            /* Indigo 600 */
+    --primary-foreground: #FFFFFF; /* White */
+    --secondary: #7C3AED;          /* Violet 600 */
+    --secondary-foreground: #FFFFFF;
+
+    /* Muted & Neutral Tokens */
+    --muted: #F1F5F9;              /* Slate 100 */
+    --muted-foreground: #64748B;   /* Slate 500 Text Muted */
+
+    /* Accents & Status */
+    --accent: #EEF2FF;             /* Indigo 50 */
+    --accent-foreground: #4F46E5;  /* Indigo 600 */
+    --success: #10B981;            /* Emerald 500 */
+    --success-foreground: #FFFFFF;
+    --destructive: #EF4444;        /* Red 500 */
+    --destructive-foreground: #FFFFFF;
+
+    /* Borders, Inputs, Rings, and Geometry */
+    --border: #E2E8F0;             /* Slate 200 */
+    --input: #E2E8F0;              /* Slate 200 */
+    --ring: #4F46E5;               /* Indigo 600 */
+    --radius: 0.75rem;             /* 12px (rounded-xl cards) */
+
+    /* Enterprise Analytics & Charts (Indigo/Violet/Emerald) */
+    --chart-1: #4F46E5;            /* Indigo 600 */
+    --chart-2: #7C3AED;            /* Violet 600 */
+    --chart-3: #10B981;            /* Emerald 500 */
+    --chart-4: #3B82F6;            /* Blue 500 */
+    --chart-5: #F59E0B;            /* Amber 500 */
+
+    /* Sidebar Navigation Tokens */
+    --sidebar: #FFFFFF;
+    --sidebar-foreground: #0F172A;
+    --sidebar-primary: #4F46E5;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #EEF2FF;
+    --sidebar-accent-foreground: #4F46E5;
+    --sidebar-border: #E2E8F0;
+    --sidebar-ring: #4F46E5;
+}
+
+.dark {
+    /* Corporate Trust Design System - Dark Mode */
+    --background: #0B0F19;         /* Rich Deep Slate base */
+    --foreground: #F8FAFC;         /* Slate 50 text */
+    --card: #1E293B;               /* Slate 800 surface */
+    --card-foreground: #F8FAFC;    /* Slate 50 */
+    --popover: #1E293B;            /* Slate 800 */
+    --popover-foreground: #F8FAFC; /* Slate 50 */
+
+    /* Brand Colors in Dark Mode */
+    --primary: #6366F1;            /* Indigo 500 */
+    --primary-foreground: #FFFFFF;
+    --secondary: #8B5CF6;          /* Violet 500 */
+    --secondary-foreground: #FFFFFF;
+
+    /* Muted & Neutral Tokens */
+    --muted: #1E293B;              /* Slate 800 */
+    --muted-foreground: #94A3B8;   /* Slate 400 */
+
+    /* Accents & Status */
+    --accent: #1E1B4B;             /* Deep Indigo */
+    --accent-foreground: #818CF8;  /* Indigo 400 */
+    --success: #10B981;            /* Emerald 500 */
+    --success-foreground: #FFFFFF;
+    --destructive: #F87171;        /* Red 400 */
+    --destructive-foreground: #FFFFFF;
+
+    /* Borders, Inputs, and Rings */
+    --border: #334155;             /* Slate 700 */
+    --input: #334155;              /* Slate 700 */
+    --ring: #6366F1;               /* Indigo 500 */
+
+    /* Charts Dark Mode */
+    --chart-1: #818CF8;            /* Indigo 400 */
+    --chart-2: #A78BFA;            /* Violet 400 */
+    --chart-3: #34D399;            /* Emerald 400 */
+    --chart-4: #60A5FA;            /* Blue 400 */
+    --chart-5: #FBBF24;            /* Amber 400 */
+
+    /* Sidebar Dark Mode */
+    --sidebar: #0F172A;
+    --sidebar-foreground: #F8FAFC;
+    --sidebar-primary: #6366F1;
+    --sidebar-primary-foreground: #FFFFFF;
+    --sidebar-accent: #1E293B;
+    --sidebar-accent-foreground: #818CF8;
+    --sidebar-border: #334155;
+    --sidebar-ring: #6366F1;
+}
+
+@layer utilities {
+    /* Corporate Trust Signature Gradients */
+    .bg-primary-gradient {
+        background-image: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    }
+
+    .text-gradient {
+        background-image: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .bg-hero-gradient {
+        background-image: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);
+    }
+
+    .bg-cta-gradient {
+        background-image: linear-gradient(135deg, #312E81 0%, #1E1B4B 100%);
+    }
+
+    /* Dimensional Depth & Isometric Utilities */
+    .perspective-2000 {
+        perspective: 2000px;
+    }
+
+    .isometric-card {
+        transform: rotateX(5deg) rotateY(-12deg);
+        transition: transform 0.3s ease;
+    }
+
+    .isometric-card:hover {
+        transform: rotateX(2deg) rotateY(-8deg);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+        min-height: 100vh;
+    }
+    html {
+        @apply font-sans;
+    }
+}
